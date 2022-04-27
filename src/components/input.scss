@@ -1,0 +1,71 @@
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.rww-input {
+	position: relative;
+	display: flex;
+	height: 22px;
+	font-size: 14px;
+  line-height: 22px;
+
+	&__label {
+		height: 100%;
+		margin-right: 5px;
+		font-weight: bold;
+	}
+
+	&__input {
+		border-width: 0;
+		border-bottom: 1px solid #333;
+		height: 100%;
+
+		&:focus-visible {
+			outline: none;
+		}
+	}
+
+	&__loading {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 22px;
+		width: 22px;
+		height: 22px;
+		background: linear-gradient(to right, #ddd, #efefef);
+		animation: spin 1s infinite;
+		border-radius: 50%;
+		&::after {
+			content: '';
+			width: 20px;
+			height: 20px;
+			background: #fff;
+		  border-radius: 50%;
+		}
+	}
+
+	&__close {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 22px;
+		height: 22px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+			color: #666;
+		cursor: pointer;
+
+		&:hover {
+			color: #333;
+			font-weight: bold;
+		}
+	}
+}
